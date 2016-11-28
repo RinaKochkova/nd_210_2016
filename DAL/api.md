@@ -9,11 +9,13 @@
 - [GET /faction/:faction_id](#get-factionfaction_id)
 - [GET /bill/](#get-bill)
 - [GET /bill/:bill_id](#get-billbill_id)
+
 ### Objects
 - [```deputy```](#deputy-object)
 - [```faction```](#faction-object)
 - [```bill```](#bill-object)
 - [```vote```](#vote-object)
+
 - - -
 
 ## GET /deputy/
