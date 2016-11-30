@@ -4,7 +4,7 @@ from django.template import loader
 from .models import *
 
 
-def index(request):
+def mainpage(request):
     template = loader.get_template('index.html')
     context = {
 
@@ -12,7 +12,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def factions(request):
+def factions_index(request):
     template = loader.get_template('factions.html')
     context = {
 
@@ -20,7 +20,23 @@ def factions(request):
     return HttpResponse(template.render(context, request))
 
 
-def deputies(request):
+def factions_details(request, id):
+    template = loader.get_template('deputies.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def deputy_details(request, id):
+    template = loader.get_template('deputies.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def stats(request):
     template = loader.get_template('deputies.html')
     context = {
 

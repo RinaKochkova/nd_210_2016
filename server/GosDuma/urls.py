@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('duma.urls')),  # совпадения же сверху вниз проверяются? Он бы непопадал в админку
+    url(r'^', include('duma.urls')),  # совпадения же сверху вниз проверяются? Он бы не попадал в админку
 ]
