@@ -72,7 +72,7 @@ def view_bill():
             query = query.where(bills.c.date_time < datetime.strptime(to, "%Y%m%d%H%M%S"))
     except ValueError:
         raise exceptions.BadRequest()
-    query = query.order_by(bills.c.date_time.desc())
+    query = query.order_by(bills.c.date_time)
     query = query.offset(offset)
     query = query.limit(count)
     result = query.execute().fetchall()
