@@ -14,7 +14,6 @@
 - [```deputy```](#deputy-object)
 - [```faction```](#faction-object)
 - [```bill```](#bill-object)
-- [```vote```](#vote-object)
 
 - - -
 
