@@ -100,10 +100,10 @@ None
 ### Parameters
 |Name|Required|Description|Default value|Example|
 |----|--------|-----------|-------------|-------|
-|offset|Optional, mutually exclusive with ```from```, ```to```|chronological order offset of bills block returned|0|280|
+|offset|Optional|chronological order offset of bills block returned|0|280|
 |count|Optional|count of bills returned|100|1200|
-|from|Optional|datetime less than datetime of any bill returned|None or ```to``` - 24 hours when ```to``` is stated|20151231235959|
-|to|Optional|datetime greater than datetime of any bill returned|None or ```from``` + 24 hours when ```from``` is stated|20151231235959|
+|from|Optional|datetime less than datetime of any bill returned|None|20151231235959|
+|to|Optional|datetime greater than datetime of any bill returned|None|20151231235959|
 
 ### Example Request
 ``` GET /bill/?from=20150211000000&count=20 ```
@@ -145,7 +145,6 @@ None
 |-----|-----------|
 |faction_id||
 |title||
-|deputies|list of ```deputy_id```|
 - - -
 
 ## ```bill``` object
@@ -157,15 +156,4 @@ None
 |bill_id||
 |title||
 |datetime||
-|votes|list of [```vote```](#vote-object) objects|
-- - -
-
-## ```vote``` object
-
-### Structure
-
-|Field|Description|
-|-----|-----------|
-|deputy_id||
-|result|One of ```'abstain'```, ```'accept'```, ```'decline'```, ```'none'```|
 - - -
