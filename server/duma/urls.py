@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.mainpage, name='mainpage'),
     url(r'^factions/$', views.factions_index, name='factions_index'),
-    url(r'^deputy/([0-9]+)/$', views.deputie_details, name='deputy_page'),  # номер будет передан как аргумент-строка
+    url(r'^deputy/([0-9]+)/$', views.deputy_details, name='deputy_page'),  # номер будет передан как аргумент-строка
     url(r'^factions/([0-9]{1})/$', views.faction_details, name='faction_page'),
     url(r'^stats/$', views.stats, name='statistics'),
 ]
