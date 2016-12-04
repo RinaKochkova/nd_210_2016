@@ -36,7 +36,25 @@
 |vote|Can be used only with ```bill_id```|Can be one of: ```accept```, ```abstain```, ```decline```, ```none```|accept|decline|
 
 ### Example Request
-``` GET /deputy/?faction_id=72100004&bill_id=75702&vote=decline```
+``` GET /deputy/?bill_id=83718&faction_id=72100005&nameContains=Игорь ```
+
+### Example Response
+```json
+[
+  {
+    "deputy_id": 99111780,
+    "faction_id": 72100005,
+    "faction_title": "ЛДПР",
+    "name": "Ананских Игорь Александрович"
+  },
+  {
+    "deputy_id": 99100750,
+    "faction_id": 72100005,
+    "faction_title": "ЛДПР",
+    "name": "Лебедев Игорь Владимирович"
+  }
+]
+```
 - - -
 
 ## GET /deputy/:deputy_id
@@ -52,7 +70,17 @@ Returns [```deputy```](#deputy-object) object with corresponding ```deputy_id```
 None
 
 ### Example Request
-``` GET /deputy/99112035 ```
+``` GET /deputy/99111860 ```
+
+### Example Response
+```json
+{
+  "deputy_id": 99111860,
+  "faction_id": 72100024,
+  "faction_title": "ЕР",
+  "name": "Кожевникова Мария Александровна"
+}
+```
 - - -
 
 ## GET /faction/
@@ -69,6 +97,28 @@ None
 
 ### Example Request
 ``` GET /faction/ ```
+
+### Example Response
+```json
+[
+  {
+    "faction_id": 72100004,
+    "faction_title": "КПРФ"
+  },
+  {
+    "faction_id": 72100005,
+    "faction_title": "ЛДПР"
+  },
+  {
+    "faction_id": 72100024,
+    "faction_title": "ЕР"
+  },
+  {
+    "faction_id": 72100027,
+    "faction_title": "СР"
+  }
+]
+```
 - - -
 
 ## GET /faction/:faction_id
@@ -84,7 +134,15 @@ Returns [```faction```](#faction-object) object with corresponding ```faction_id
 None
 
 ### Example Request
-``` GET /faction/72100024 ```
+``` GET /faction/72100004 ```
+
+### Example Response
+```json
+{
+  "faction_id": 72100004,
+  "faction_title": "КПРФ"
+}
+```
 - - -
 
 ## GET /bill/
@@ -105,7 +163,23 @@ None
 |to|Optional|datetime greater than datetime of any bill returned|None|20151231235959|
 
 ### Example Request
-``` GET /bill/?from=20150211000000&count=20 ```
+``` GET /bill/?from=20160315164956&count=2 ```
+
+### Example Response
+```json
+[
+  {
+    "bill_id": 93809,
+    "datetime": "20160315170400",
+    "title": "О проекте постановления Государственной Думы № 1014500-6 \"О поручении Счетной палате Российской Федерации\" (о проверке в 2016 году финансово-хозяйственной деятельности Центрального банка Российской Федерации за 2013-2015 годы в части формирования и использования фондов, создаваемых из прибыли Банка России, а также использования сметы расходов Банка России, его структурных подразделений и учреждений) – Система анализа результатов голосований на заседаниях Государственной Думы"
+  },
+  {
+    "bill_id": 93810,
+    "datetime": "20160315170428",
+    "title": "(2 чтение) О проекте федерального закона № 895685-6 \"О внесении изменений в отдельные законодательные акты Российской Федерации\" (уточнение правил наследования коммориентами) – Система анализа результатов голосований на заседаниях Государственной Думы"
+  }
+]
+```
 - - -
 
 ## GET /bill/:bill_id
@@ -122,6 +196,15 @@ None
 
 ### Example Request
 ``` GET /bill/76179 ```
+
+### Example Respone
+```json
+{
+  "bill_id": 76179,
+  "datetime": "Tue, 28 Feb 2012 17:11:46 GMT",
+  "title": "(первое чтение) О проекте федерального закона № 1471-6 \"О внесении изменений в Федеральный закон \"О политических партиях\" (в части либерализации требований к созданию и деятельности политических партий) – Система анализа результатов голосований на заседаниях Государственной Думы"
+}
+```
 - - -
 
 ## ```deputy``` object
@@ -143,7 +226,7 @@ None
 |Field|Description|
 |-----|-----------|
 |faction_id||
-|title||
+|faction_title||
 - - -
 
 ## ```bill``` object
