@@ -20,7 +20,7 @@ def factions_index(request):
     return HttpResponse(template.render(context, request))
 
 
-def factions_details(request, id):
+def faction_details(request, id):
     template = loader.get_template('deputies.html')
     context = {
 

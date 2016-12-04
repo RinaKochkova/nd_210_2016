@@ -16,7 +16,6 @@ class LawVoting(models.Model):
     overall_absent_v = models.FloatField()  # процент не голосовавших
     overall_appearance_v = models.FloatField()  # явка
 
-
     def __str__(self):
         return self.title
 
@@ -70,6 +69,7 @@ class Deputy(models.Model):
 
     votes = models.ManyToManyField(LawVoting, through='DeputyVote')
 
+    lifetime = models.SmallIntegerField() # количество голосований, в которых он указан как депутат
     appearance = models.SmallIntegerField()  # количество голосований, в которых он участвовал
     absent_number = models.SmallIntegerField()  # количество пропусков депутата
 
@@ -98,6 +98,7 @@ class DeputyVote(models.Model):
 
     def __str__(self):
         return self.vote
+
 
 class OverallStats(models.Model):
 
