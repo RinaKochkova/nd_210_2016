@@ -1,5 +1,7 @@
 header {
 	display: flex;
+  background-color: #68bbff;
+  padding: 10px;
 	flex-direction: row;
 	justify-content: center;
 	vertical-align: baseline;
@@ -13,6 +15,12 @@ header > * {
 header h1 {
 	width: 400px;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 nav ul {
 	margin: 0;
 	padding: 0;
@@ -59,6 +67,6 @@ nav a:not(.current):focus, nav a:not(.current):hover {
 
 .text {
 	font-size: 2em;
-	max-width: 800px;
+	max-width: 1000px;
 	margin: 0 auto;
 }
