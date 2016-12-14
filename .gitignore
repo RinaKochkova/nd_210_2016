@@ -659,3 +659,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+server/duma/m_backup/db.sqlite3
+server/duma/m_backup/0001_initial.py
